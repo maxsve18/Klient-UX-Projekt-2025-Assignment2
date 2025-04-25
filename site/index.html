@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeSearchApplication</title>
+    <link rel="stylesheet" href="css/recipe-search.css" />
+</head>
+<body>
+<main class="filter-container">
+    <div class="panel">
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Sök recept eller ingrediens">
+            <button class="search-filter-button"></button>
+        </div>
+        <div class="active-filters">
+            <button class="active-filters-clear">Rensa filter (5)</button>
+            <span class="filter-tag">Huvudrätt</span>
+            <span class="filter-tag">Gluten</span>
+            <span class="filter-tag">Vegetariskt</span>
+            <span class="filter-tag">Ej ananas</span>
+            <span class="filter-tag">Thailand</span>
+        </div>
+
+        <div class="price-range">
+            <label for="price-slider">Prisintervall - per portion</label>
+            <input type="range" id="price-slider" min="500" max="700" class="price-slider">
+            <div class="price-labels">
+                <span>500 kr</span>
+                <span>700 kr</span>
+            </div>
+        </div>
+
+        <div class="dish-type">
+            <span class="dish-type-option">Mingel/snacks</span>
+            <span class="dish-type-option">Förrät</span>
+            <span class="dish-type-option-active">Huvudrätt</span>
+            <span class="dish-type-option">Efterrätt</span>
+        </div>
+
+        <div class="preparation-options">
+            <button class="preparation-option-button">Allt kan förberedas dagen innan</button>
+            <button class="preparation-option-button">Delar kan förberedas</button>
+        </div>
+
+        <div class="dropdown-boxes">
+            <div class="box1">
+                <button class="box1-toggle">Allergener</button>
+                <div class="box1-content">
+                    <button class="allergen">Citrus</button>
+                    <button class="allergen">Fisk- och Skaldjur</button>
+                    <button class="allergen">Gluten</button>
+                    <button class="allergen">Jordnötter</button>
+                    <button class="allergen">Laktosfri</button>
+                    <button class="allergen">Mjölkprotein</button>
+                    <button class="allergen">Nötter</button>
+                    <button class="allergen">Stenfrukter</button>
+                    <button class="allergen">Ägg</button>
+                </div>
+            </div>
+            <div class="dropdown-boxes"><button class="box2-toggle">Specialkost</button></div>
+            <div class="dropdown-boxes"><button class="box3-toggle">Ingredienser</button></div>
+            <div class="dropdown-boxes"><button class="box4-toggle">Världens kök</button></div>
+            <div class="dropdown-boxes"><button class="box5-toggle">Tilllagningstid</button></div>
+            <div class="dropdown-boxes"><button class="box6-toggle">Anpassningsbar</button></div>
+        </div>
+
+        <button class="show-recipe-button">Visa recept</button>
+    </div>
+    <section class="recipe-results">
+
+    </section>
+
+
+</main>
+
+<script src="recipe-search.js"></script>
+</body>
+</html>
