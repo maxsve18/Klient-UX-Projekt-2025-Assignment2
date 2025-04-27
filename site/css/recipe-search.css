@@ -4,7 +4,12 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    justify-items: center;
+}
+
 .filter-container {
+    max-width: 600px;
 }
 
 .panel {
@@ -12,14 +17,13 @@ html {
     flex-direction: column;
     align-items: center;
     background-color: #A46770;
-    max-width: 530px;
     padding: 70px 40px 40px 40px;
     margin: 0 auto;
 }
 
 .search-bar {
-    display: flex;
-    flex-direction: row;
+    position: relative;
+    display: inline-block;
     width: 493px;
     margin-bottom: 12px;
 }
@@ -28,46 +32,252 @@ html {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     border-radius: 25px;
+    padding-left: 10px;
     border: 2px solid #BEBEBE;
-    padding-left: 25px;
-    width: 493px;
-    height: 43px;
+    width: 477px;
+    height: 39px;
 }
 
 .search-input-filter-button {
     position: absolute;
-    right: 23%;
-    top: 9.3%;
+    right: 7px;
+    top: 5px;
     cursor: pointer;
 }
+
 
 .active-filters {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 493px;
+    margin-bottom: 20px;
 }
 
 .active-filters-clear {
     display: flex;
+    margin-right: 5px;
 }
 
 .active-filters-clear-btn {
     display: flex;
     align-items: center;
-
     background-color: #A46770;
     border: 0;
     cursor: pointer;
+    margin-bottom: 10px;
+
+    span {
+        color: #FFFFFF;
+        margin-left: 4px;
+    }
 }
 
-.dropdown-boxes {
+.filter-tag-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border: 0;
+    border-radius: 25px;
+    margin-right: 10px;
+    padding-left: 9px;
+    width: auto;
+    height: 28px;
+
+    img {
+        cursor: pointer;
+    }
+}
+
+
+.range_container {
+    width: 493px;
+
+    p {
+        color: #FFFFFF;
+    }
+}
+
+#sliders-control {
+
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 0 solid;
+    cursor: pointer;
+    position: relative;
+}
+
+#fromSlider {
+    width: 493px;
+    background-color: #47292D;
+    -webkit-appearance: none;
+    height: 7px;
+    border-radius: 5px;
+    position: relative;
+}
+
+#toSlider {
+    position: relative;
+    top: -16px;
+    right: -150px;
+    width: 230px;
+    -webkit-appearance: none;
+    height: 7px;
+    border-radius: 5px;
+    direction: rtl;
+}
+
+#range-text {
+    display: flex;
+
+    p {
+        margin-top: -8px;
+        margin-left: 135px;
+        margin-right: 35px;
+    }
+}
+
+
+.dish-type {
     display: flex;
     flex-direction: column;
     width: 493px;
-    justify-content: space-between;
+
+    p {
+        color: #ffffff;
+    }
+}
+
+.dish-types {
+}
+
+.dish-type-btn {
+    border: 0;
+    border-radius: 20px;
+}
+
+.dish-type-btn-active {
+    border: 1px #ffffff;
+    border-radius: 20px;
 }
 
 
+.preparation-options {
+    width: 493px;
+    justify-content: space-between;
+
+    p {
+        color: white;
+    }
+}
+
+.prep-btns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#prep-btn1 {
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+#prep-btn2 {
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: auto;
+}
+
+.dropdown-boxes {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 493px;
+}
+
+.box-toggle1 {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-left: 15px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: lighter;
+    background-color: white;
+}
+
+.box-toggle2 {
+    width: 100%;
+    height: 35px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+    font-weight: lighter;
+    background-color: white;
+}
+
+.allergen {
+    background-color: white;
+    height: 30px;
+    padding-left: 8px;
+    margin-right: 15px;
+    border: 1px solid rgba(117, 52, 61, 1);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.allergen-box {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.box1-content {
+    padding-left: 10px;
+    height: 80px;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+
+.allergen.selected {
+    background: #75343D;
+    color: white;
+}
+
+.show-recipe-button {
+    position: relative;
+    margin-top: 30px;
+    appearance: none;
+    border-radius: 20px;
+    border: 0;
+    color: white;
+    background-color: #4B171E;
+    padding: 10px;
+    align-self: flex-end;
+    cursor: pointer;
+}
 
 .hidden {
     display: none;
