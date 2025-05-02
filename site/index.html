@@ -8,11 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-<main class="filter-container">
+<main class="filter-container" id="filter-view">
     <div class="panel">
         <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Sök recept eller ingrediens">
-            <img src="assets/search-input-filter-button.svg" class="search-input-filter-button">
+            <label for="search-input"></label><input type="text" id="search-input"
+                                                     placeholder="Sök recept eller ingrediens">
+            <img src="assets/search-input-filter-button.svg" class="search-input-filter-button" alt="filter icon">
         </div>
         <div class="active-filters">
             <div class="active-filters-clear">
@@ -47,78 +48,250 @@
                 </button>
             </div>
         </div>
-
-        <div class="range_container">
-            <p>Prisintervall - per portion</p>
-            <div id="sliders-control">
-                <input id="fromSlider" type="range" value="30" min="0" max="100" disabled>
-                <input id="toSlider" type="range" value="0" min="0" max="0">
-                <div id="range-text">
-                    <p>500 kr</p>
-                    <p>7000 kr</p>
+        <section id="filter-options">
+            <div class="range_container">
+                <p>Prisintervall - per portion</p>
+                <div id="sliders-control">
+                    <label for="fromSlider"></label><input id="fromSlider" type="range" value="30" min="0" max="100"
+                                                           disabled>
+                    <label for="toSlider"></label><input id="toSlider" type="range" value="0" min="0" max="0">
+                    <div id="range-text">
+                        <p>500 kr</p>
+                        <p>7000 kr</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="dish-type">
-            <p>Typ av rätt</p>
-            <div class="dish-types">
-                <button class="dish-type-btn">Mingel/snacks</button>
-                <button class="dish-type-btn">Förrät</button>
-                <button class="dish-type-btn-active">Huvudrätt</button>
-                <button class="dish-type-btn">Efterrätt</button>
-            </div>
-        </div>
-
-        <div class="preparation-options">
-            <p>Kan förberedas innan</p>
-            <div class="prep-btns">
-                <button id="prep-btn1">Allt kan förberedas dagen innan</button>
-                <button id="prep-btn2">Delar kan förberedas</button>
-            </div>
-        </div>
-
-        <div class="dropdown-boxes">
-            <div class="allergen-box">
-                <button class="box-toggle1">Allergener</button>
-                <div class="box1-content hidden">
-                    <button class="allergen">Citrus</button>
-                    <button class="allergen">Fisk- och Skaldjur</button>
-                    <button class="allergen">Gluten</button>
-                    <button class="allergen">Jordnötter</button>
-                    <button class="allergen">Laktosfri</button>
-                    <button class="allergen">Mjölkprotein</button>
-                    <button class="allergen">Nötter</button>
-                    <button class="allergen">Stenfrukter</button>
-                    <button class="allergen">Ägg</button>
+            <div class="dish-type">
+                <p>Typ av rätt</p>
+                <div class="dish-types">
+                    <button class="dish-type-btn">Mingel/snacks</button>
+                    <button class="dish-type-btn">Förrät</button>
+                    <button class="dish-type-btn-active">Huvudrätt</button>
+                    <button class="dish-type-btn">Efterrätt</button>
                 </div>
             </div>
-            <div class="dropdown-boxes">
-                <button class="box-toggle2">Specialkost</button>
-            </div>
-            <div class="dropdown-boxes">
-                <button class="box-toggle2">Ingredienser</button>
-            </div>
-            <div class="dropdown-boxes">
-                <button class="box-toggle2">Världens kök</button>
-            </div>
-            <div class="dropdown-boxes">
-                <button class="box-toggle2">Tilllagningstid</button>
-            </div>
-            <div class="dropdown-boxes">
-                <button class="box-toggle2">Anpassningsbar</button>
-            </div>
-        </div>
 
-        <button class="show-recipe-button">Visa recept (365)</button>
+            <div class="preparation-options">
+                <p>Kan förberedas innan</p>
+                <div class="prep-btns">
+                    <button id="prep-btn1">Allt kan förberedas dagen innan</button>
+                    <button id="prep-btn2">Delar kan förberedas</button>
+                </div>
+            </div>
+
+            <div class="dropdown-boxes">
+                <div class="allergen-box">
+                    <button class="box-toggle1">
+                        Allergener
+                        <img src="assets/arrow-down.svg" class="dropdown-arrow" alt="dropdown-icon">
+                    </button>
+                    <div class="box1-content hidden">
+                        <img src="assets/arrow-down.svg" id="arrow-toggle-0 hidden" alt="dropdown-icon">
+                        <button class="allergen">Citrus</button>
+                        <button class="allergen">Fisk- och Skaldjur</button>
+                        <button class="allergen">Gluten</button>
+                        <button class="allergen">Jordnötter</button>
+                        <button class="allergen">Laktosfri</button>
+                        <button class="allergen">Mjölkprotein</button>
+                        <button class="allergen">Nötter</button>
+                        <button class="allergen">Stenfrukter</button>
+                        <button class="allergen">Ägg</button>
+                    </div>
+                </div>
+                <div class="dropdown-boxes">
+                    <button class="box-toggle2">Specialkost<img src="assets/arrow-down.svg" class="dropdown-arrow2"
+                                                                alt="dropdown-icon">
+                    </button>
+                </div>
+                <div class="dropdown-boxes">
+                    <button class="box-toggle2">Ingredienser<img src="assets/arrow-down.svg" class="dropdown-arrow2"
+                                                                 alt="dropdown-icon">
+                    </button>
+                </div>
+                <div class="dropdown-boxes">
+                    <button class="box-toggle2">Världens kök<img src="assets/arrow-down.svg" class="dropdown-arrow2"
+                                                                 alt="dropdown-icon">
+                    </button>
+                </div>
+                <div class="dropdown-boxes">
+                    <button class="box-toggle2">Tilllagningstid<img src="assets/arrow-down.svg" class="dropdown-arrow2"
+                                                                    alt="dropdown-icon">
+                    </button>
+                </div>
+                <div class="dropdown-boxes">
+                    <button class="box-toggle2">Anpassningsbar<img src="assets/arrow-down.svg" class="dropdown-arrow2"
+                                                                   alt="dropdown-icon">
+                    </button>
+                </div>
+            </div>
+
+            <button class="show-recipe-button">Visa recept (365)</button>
+        </section>
     </div>
-    <section class="recipe-results">
-
-    </section>
-
-
 </main>
 
-<script src="recipe-search.js"></script>
+<section class="recipe-search-results" id="recipeResults" hidden>
+    <div id="total-sort">
+        <span>Recept (365)</span>
+        <button id="sort-button">A – Ö <img src="assets/arrow-down.svg" class="dropdown-arrow2"
+                                            alt="dropdown-icon"></button>
+    </div>
+    <div class="recipe-group">
+        <h2>A</h2>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/vegitarian.svg" alt="vegetarisk" class="veg-icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag blue">Går att förbereda dagen innan</button>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/pig.svg" alt="griskött" class="icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag blue">Går att förbereda dagen innan</button>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/cow.svg" alt="nötkött" class="icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag green">Går att göra vegetarisk</button>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/cow.svg" alt="nötkött" class="icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag blue">Går att förbereda dagen innan</button>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/pig.svg" alt="griskött" class="icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag green">Går att göra vegetarisk</button>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/cow.svg" alt="nötkött" class="icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag blue">Går att förbereda dagen innan</button>
+            </div>
+        </div>
+    </div>
+    <div class="recipe-group">
+        <h2>B</h2>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/chicken.svg" alt="kyckling" class="icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag blue">Går att förbereda dagen innan</button>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/fish.svg" alt="fisk" class="icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag green">Går att göra vegetarisk</button>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/chicken.svg" alt="kyckling" class="icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag green">Går att göra vegetarisk</button>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/cow.svg" alt="nötkött" class="icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag green">Går att göra vegetarisk</button>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/vegitarian.svg" alt="vegetarisk" class="veg-icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag blue">Går att förbereda dagen innan</button>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <div class="recipe-title">
+                <h3>Namn på recept</h3>
+                <img src="assets/cow.svg" alt="nötkött" class="icon">
+            </div>
+            <div class="recipe-info">
+                <p>Pris per portion</p>
+                <p>Tilllagningstid</p>
+                <p>Antal portioner</p>
+                <button class="prep-tag green">Går att göra vegetarisk</button>
+            </div>
+        </div>
+    </div>
+    <div id="scrollbar"></div>
+    <img src="assets/scroll1.svg" class="scroll1" alt="scrolle">
+    <img src="assets/scroll2.svg" class="scroll2" alt="scrolla">
+</section>
+
+<script defer src="recipe-search.js"></script>
 </body>
 </html>

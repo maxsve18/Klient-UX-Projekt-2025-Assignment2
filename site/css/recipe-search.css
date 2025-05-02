@@ -5,11 +5,15 @@ html {
 }
 
 body {
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 600px;
 }
 
 .filter-container {
-    max-width: 600px;
+    width: 600px;
 }
 
 .panel {
@@ -28,7 +32,7 @@ body {
     margin-bottom: 12px;
 }
 
-.search-input {
+#search-input {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     border-radius: 25px;
@@ -99,7 +103,7 @@ body {
 }
 
 #sliders-control {
-
+    cursor: pointer;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -155,17 +159,20 @@ input[type="range"]::-webkit-slider-thumb {
     }
 }
 
-.dish-types {
-}
 
 .dish-type-btn {
-    border: 0;
     border-radius: 20px;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
 }
 
 .dish-type-btn-active {
-    border: 1px #ffffff;
     border-radius: 20px;
+    border: 1px solid white;
+    padding: 8px 15px;
+    color: white;
+    background-color: #75343D;
 }
 
 
@@ -224,6 +231,9 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .box-toggle2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 35px;
     padding-left: 15px;
@@ -252,6 +262,22 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 20px;
 }
 
+#arrow-toggle-0\ hidden {
+    transform: scaleY(-1);
+    position: relative;
+    left: 460px;
+    bottom: 37px;
+}
+
+.dropdown-arrow {
+    position: relative;
+    left: 392px;
+}
+
+.dropdown-arrow2 {
+    margin-right: 7px;
+}
+
 .box1-content {
     padding-left: 10px;
     height: 80px;
@@ -268,6 +294,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .show-recipe-button {
     position: relative;
+    left: 372px;
     margin-top: 30px;
     appearance: none;
     border-radius: 20px;
@@ -275,10 +302,159 @@ input[type="range"]::-webkit-slider-thumb {
     color: white;
     background-color: #4B171E;
     padding: 10px;
-    align-self: flex-end;
     cursor: pointer;
 }
 
 .hidden {
     display: none;
+}
+
+.recipe-search-results {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 550px;
+    padding: 25px;
+    background-color: #F9F3ED;
+}
+
+.recipe-search-results[hidden] {
+    display: none !important;
+}
+
+#sort-button {
+    position: relative;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border: 0;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 10px;
+    width: 85px;
+    border-radius: 16px;
+    background-color: #A46770;
+    cursor: pointer;
+}
+
+.recipe-group {
+    width: 583px;
+}
+
+#total-sort {
+    display: flex;
+    flex-direction: row;
+    gap: 320px;
+
+    span {
+        margin-left: 8px;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    img {
+        position: relative;
+        margin-left: 3px;
+        bottom: 2px;
+        filter: invert(1);
+    }
+}
+
+
+.recipe-group h2 {
+    font-size: 16px;
+    font-weight: bolder;
+    margin-left: 8px;
+}
+
+.recipe-card {
+    width: 470px;
+
+    background-color: white;
+    border-radius: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.recipe-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.recipe-title h3 {
+    color: #4B171E;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.recipe-info p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #4B171E;
+}
+
+.recipe-tags {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    right: 15px;
+    top: 10px;
+}
+
+.veg-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    right: 15px;
+    top: 10px;
+}
+
+.prep-tag {
+    border: none;
+    border-bottom-right-radius: 16px;
+    border-top-left-radius: 16px;
+    width: 100%;
+    max-width: 115px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.prep-tag.blue {
+    background-color: #606B92;
+}
+
+.prep-tag.green {
+    background-color: #7a8763;
+}
+
+.scroll1 {
+    position: absolute;
+    right: 25px;
+    top: 370px;
+}
+
+.scroll2 {
+    top: 110px;
+    right: 10px;
+    position: absolute;
+    cursor: pointer;
 }
